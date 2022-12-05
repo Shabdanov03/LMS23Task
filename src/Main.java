@@ -4,13 +4,19 @@ public class Main {
     public static void main(String[] args) {
 
         Random random = new Random();
+        int[] array = new int[10];
         ArrayList<Integer>integers = new ArrayList<>();
         LinkedList<Integer> integerLinkedList = new LinkedList<>();
-        for (int i = 0,j=0; i < 10; i++,j++) {
+        for (int i = 0; i < 10; i++) {
+            array[i]= random.nextInt(0,2);
             integers.add(random.nextInt(0,2));
             integerLinkedList.add(random.nextInt(0,2));
         }
 
+        System.out.println("Array before sort :"+ Arrays.toString(array));
+        System.out.println("Array after sort :");
+        getSort(array);
+        System.out.println("\n <===================================>");
         System.out.println("ArrayList before sort : "+integers);
         System.out.println("ArrayList after sort :");
         getSort(integers);
@@ -19,6 +25,12 @@ public class Main {
         System.out.println("LinkedList after sort : ");
         getSort(integerLinkedList);
 
+    }
+    public static void getSort(int[] array){
+        Arrays.sort(array);
+        for (int i : array) {
+            System.out.print(" "+i);
+        }
     }
 
    public static void getSort(ArrayList<Integer> integers){
